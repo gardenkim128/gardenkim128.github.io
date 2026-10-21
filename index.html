@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>정원</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Pretendard", "Noto Sans KR", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #111;
+    background: #fff;
+    padding: 32px;
+  }
+  a { color: inherit; text-decoration: none; }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 80px;
+  }
+  nav .logo { font-weight: 600; letter-spacing: 0.02em; }
+  nav ul { list-style: none; display: flex; gap: 24px; }
+  nav a { opacity: 0.4; transition: opacity 0.15s; }
+  nav a:hover, nav a.active { opacity: 1; }
+  main { max-width: 720px; }
+  .page { display: none; }
+  .page.active { display: block; }
+  .work-list { list-style: none; }
+  .work-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .work-list li:hover { background: #fafafa; }
+  .work-list .year { opacity: 0.4; }
+  p { margin-bottom: 1em; max-width: 520px; }
+  .back { position: fixed; right: 32px; bottom: 24px; font-size: 13px; opacity: 0.4; }
+  .back:hover { opacity: 1; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#work" class="logo">정원</a>
+  <ul>
+    <li><a href="#about" data-page="about">About</a></li>
+    <li><a href="#work" data-page="work">Work</a></li>
+    <li><a href="#contact" data-page="contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <section id="about" class="page">
+    <p>여기에 자기소개를 적어주세요. 어떤 일을 하는지, 어떤 분야에 관심이 있는지 2~3문장이면 충분해요.</p>
+    <p>두 번째 문단: 경력이나 배경을 간단히 적어도 좋아요.</p>
+  </section>
+
+  <section id="work" class="page">
+    <ul class="work-list">
+      <li><a href="#">프로젝트 이름 1</a><span class="year">2026</span></li>
+      <li><a href="#">프로젝트 이름 2</a><span class="year">2025</span></li>
+      <li><a href="#">프로젝트 이름 3</a><span class="year">2025</span></li>
+      <li><a href="#">프로젝트 이름 4</a><span class="year">2024</span></li>
+      <li><a href="#">프로젝트 이름 5</a><span class="year">2023</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="page">
+    <p><a href="mailto:jamba.kim@musinsa.com">jamba.kim@musinsa.com</a></p>
+    <p><a href="https://github.com/" target="_blank">GitHub</a></p>
+  </section>
+
+</main>
+
+<a href="#" class="back" onclick="window.scrollTo(0,0);return false;">↑ Back to Top</a>
+
+<script>
+  function show() {
+    var id = (location.hash || "#work").slice(1);
+    if (!document.getElementById(id)) id = "work";
+    document.querySelectorAll(".page").forEach(function (p) {
+      p.classList.toggle("active", p.id === id);
+    });
+    document.querySelectorAll("nav a[data-page]").forEach(function (a) {
+      a.classList.toggle("active", a.dataset.page === id);
+    });
+  }
+  window.addEventListener("hashchange", show);
+  show();
+</script>
+
+</body>
+</html>

@@ -51,14 +51,6 @@
   .hero { padding: 80px 0 72px; }
   .hero h1 { font-size: clamp(88px, 20vw, 260px); line-height: 0.95; font-weight: 700; letter-spacing: -0.04em; }
   .hero p { margin: 28px 0 0; font-size: 20px; opacity: 0.5; }
-  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 48px; }
-  .tab {
-    font: inherit; font-size: 15px; background: none; color: #111; cursor: pointer;
-    border: 1px solid #999; padding: 8px 20px; border-radius: 999px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .tab:hover { background: #f4f4f6; }
-  .tab.active { background: #111; color: #fff; border-color: #111; }
   .work-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 80px 40px; }
   .card .thumb {
     background: #f4f4f6; aspect-ratio: 16 / 11; overflow: hidden;
@@ -83,7 +75,10 @@
   .p-overview { font-size: 16px; line-height: 1.9; max-width: 620px; margin-bottom: 8px; }
   .p-contrib { font-size: 13px; opacity: 0.4; margin-bottom: 64px; }
   .sec { margin-bottom: 72px; }
-  .sec h2 { font-size: 18px; font-weight: 600; }
+  .sec h2, .sec h3 { font-size: 18px; font-weight: 600; }
+  .proj-block { margin-top: 112px; padding-top: 48px; border-top: 1px solid #ddd; }
+  .proj-block:first-of-type { margin-top: 32px; }
+  .proj-title { font-size: 26px; font-weight: 600; line-height: 1.3; }
   .sec-meta { font-size: 13px; opacity: 0.4; margin: 2px 0 14px; }
   .sec p { max-width: 620px; margin-top: 10px; }
   .shots img { display: block; width: 100%; height: auto; margin-top: 16px; }
@@ -148,54 +143,33 @@
       <h1>김정원</h1>
       <p>브랜드 경험 디자이너</p>
     </div>
-    <div class="tabs">
-      <button class="tab active" data-filter="all">전체</button>
-      <button class="tab" data-filter="무신사">무신사</button>
-      <button class="tab" data-filter="버핏서울">버핏서울</button>
-      <button class="tab" data-filter="호텔신라">호텔신라</button>
-      <button class="tab" data-filter="프리랜서">프리랜서</button>
-    </div>
     <ul class="work-list">
-      <li class="card" data-company="무신사">
+      <li class="card">
         <a href="#soldout">
           <div class="thumb"><img src="images/soldout/cover.jpg" alt="Soldout" loading="lazy" onerror="this.remove()"></div>
           <div class="c-title">Soldout <span class="c-year">2022.04 – 현재</span></div>
-          <div class="c-tags">무신사 · Brand Experience, Promotion Design, Graphic Design</div>
+          <div class="c-tags">Soldout</div>
         </a>
       </li>
-      <li class="card" data-company="프리랜서">
-        <a href="#welluga">
-          <div class="thumb"><img src="images/welluga/cover.jpg" alt="Welluga" loading="lazy" onerror="this.remove()"></div>
-          <div class="c-title">Welluga <span class="c-year">2022.02 – 2022.04</span></div>
-          <div class="c-tags">프리랜서 · Brand Experience, Illustration</div>
-        </a>
-      </li>
-      <li class="card" data-company="버핏서울">
+      <li class="card">
         <a href="#fitness-lounge">
-          <div class="thumb"><img src="images/fitness-lounge/cover.jpg" alt="Fitness Lounge" loading="lazy" onerror="this.remove()"></div>
-          <div class="c-title">Fitness Lounge <span class="c-year">2021.03 – 2022.01</span></div>
-          <div class="c-tags">버핏서울 · Brand Experience, Web·Mobile Design, KIDS</div>
+          <div class="thumb"><img src="images/fitness-lounge/cover.jpg" alt="버핏서울" loading="lazy" onerror="this.remove()"></div>
+          <div class="c-title">버핏서울 <span class="c-year">2021.03 – 2022.01</span></div>
+          <div class="c-tags">Fitness Lounge</div>
         </a>
       </li>
-      <li class="card" data-company="프리랜서">
-        <a href="#sikmul1">
-          <div class="thumb"><img src="images/sikmul1/cover.jpg" alt="SIKMUL 1" loading="lazy" onerror="this.remove()"></div>
-          <div class="c-title">SIKMUL 1 <span class="c-year">2020.03 – 2020.04</span></div>
-          <div class="c-tags">프리랜서 · Brand Experience, Illustration</div>
-        </a>
-      </li>
-      <li class="card" data-company="호텔신라">
+      <li class="card">
         <a href="#hotel-shilla">
-          <div class="thumb"><img src="images/hotel-shilla/cover.jpg" alt="Hotel Shilla" loading="lazy" onerror="this.remove()"></div>
-          <div class="c-title">Hotel Shilla <span class="c-year">2018.08 – 2019.04</span></div>
-          <div class="c-tags">호텔신라 · Package Design, Space Design, Graphic Design</div>
+          <div class="thumb"><img src="images/hotel-shilla/cover.jpg" alt="호텔신라" loading="lazy" onerror="this.remove()"></div>
+          <div class="c-title">호텔신라 <span class="c-year">2018.08 – 2019.04</span></div>
+          <div class="c-tags">Hotel Shilla</div>
         </a>
       </li>
-      <li class="card" data-company="프리랜서">
-        <a href="#etc">
-          <div class="thumb"><img src="images/etc/cover.jpg" alt="ETC" loading="lazy" onerror="this.remove()"></div>
-          <div class="c-title">ETC <span class="c-year">2019 – 2021</span></div>
-          <div class="c-tags">프리랜서 · Character Design, Editorial Design</div>
+      <li class="card">
+        <a href="#freelance">
+          <div class="thumb"><img src="images/welluga/cover.jpg" alt="프리랜서" loading="lazy" onerror="this.remove()"></div>
+          <div class="c-title">프리랜서 <span class="c-year">2017 – 2022</span></div>
+          <div class="c-tags">Welluga · SIKMUL 1 · ETC</div>
         </a>
       </li>
     </ul>
@@ -260,44 +234,9 @@
     </div>
   </section>
 
-  <section id="welluga" class="page" data-nav="work">
-    <a class="back-link" href="#work">← Work</a>
-    <h1 class="p-title">Welluga</h1>
-    <div class="p-period">2022.02 – 2022.04</div>
-    <div class="p-tags"><span>Brand Experience</span><span>Illustration</span></div>
-    <p class="p-overview">웰루가는 폐쇄적인 운동 콘텐츠 시장에서 정보 비대칭을 개선하고, 소비자와 공급자 경계 없이 커뮤니티가 이루어지는 통합 웰니스 플랫폼입니다. 앱 서비스 런칭을 위한 로고, 브랜드 가이드, 일러스트를 제작하였습니다.</p>
-    <div class="p-contrib">Contribution 100%</div>
-    <div class="sec">
-      <h2>Brand Identity</h2>
-      <p>웰루가는 ‘벨루가’의 사랑스럽고 따뜻한 표정, 바다에서 유영하는 자유로움과 역동성을 담은 브랜드입니다. 피트니스 시장의 정보 비대칭을 개선하고 사용자와 공급자 간의 지속적인 연결을 통해 맞춤화된 서비스를 제공합니다.</p>
-      <div class="shots">
-        <img src="images/welluga/brand-identity-1.jpg" alt="Welluga Brand Identity 1" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-    <div class="sec">
-      <h2>Logo</h2>
-      <div class="sec-meta">Lettering, Word Mark</div>
-      <div class="shots">
-        <img src="images/welluga/logo-1.jpg" alt="Welluga Logo 1" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-    <div class="sec">
-      <h2>App Icon / Business Card / T-shirts</h2>
-      <div class="shots">
-        <img src="images/welluga/application-1.jpg" alt="Welluga App Icon / Business Card / T-shirts 1" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-    <div class="sec">
-      <h2>Illustration</h2>
-      <div class="shots">
-        <img src="images/welluga/illustration-1.jpg" alt="Welluga Illustration 1" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-  </section>
-
   <section id="fitness-lounge" class="page" data-nav="work">
     <a class="back-link" href="#work">← Work</a>
-    <h1 class="p-title">Fitness Lounge</h1>
+    <h1 class="p-title">버핏서울</h1>
     <div class="p-period">2021.03 – 2022.01</div>
     <div class="p-tags"><span>Brand Experience</span><span>Web·Mobile Design</span><span>KIDS</span></div>
     <p class="p-overview">피트니스라운지는 그룹 운동 전문 브랜드 버핏서울에서 런칭한 오프라인 피트니스 센터입니다. 브랜드 운영을 위한 가이드라인과 브랜드 파생상품, 웹과 모바일 그래픽물을 디자인했습니다.</p>
@@ -324,33 +263,9 @@
     </div>
   </section>
 
-  <section id="sikmul1" class="page" data-nav="work">
-    <a class="back-link" href="#work">← Work</a>
-    <h1 class="p-title">SIKMUL 1</h1>
-    <div class="p-period">2020.03 – 2020.04</div>
-    <div class="p-tags"><span>Brand Experience</span><span>Illustration</span></div>
-    <p class="p-overview">식물원(SIKMUL1)은 가드닝 상품을 비롯한 라이프스타일 상품을 판매하는 편집매장입니다. 내부 운영에 필요한 브랜드 애플리케이션, 행사용 그래픽, SNS 콘텐츠 가이드 등을 제작했습니다. 식물원의 기존 아이덴티티를 디자인에 녹여 하나의 일관된 방향성으로 나아가고, 고객들에게는 식물원만의 브랜드 이미지를 강화할 수 있도록 했습니다.</p>
-    <div class="p-contrib">Contribution 100%</div>
-    <div class="sec">
-      <h2>Brand Application / VIP Card</h2>
-      <p>매장 내 배치되는 브랜드 어플리케이션과 1주년 기념 VIP 카드를 디자인하였습니다. 가드닝을 상징하는 다섯 가지 요소를 그래픽으로 표현하여 브랜드의 아이덴티티를 시각적으로 강조하였으며, 이를 통해 고객들에게 독특하고 기억에 남는 경험을 제공하고자 했습니다.</p>
-      <div class="shots">
-        <img src="images/sikmul1/brand-application-1.jpg" alt="SIKMUL 1 Brand Application / VIP Card 1" loading="lazy" onerror="this.remove()">
-        <img src="images/sikmul1/brand-application-2.jpg" alt="SIKMUL 1 Brand Application / VIP Card 2" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-    <div class="sec">
-      <h2>Graphic Guide / Poster Guide</h2>
-      <p>식물원의 정기 포스터와 SNS 콘텐츠를 디자인하였습니다. 운영 가이드를 함께 제작하여 디자인의 효율성을 높이고 일관성을 유지하였으며, 이를 통해 브랜드 이미지를 강화할 수 있도록 했습니다.</p>
-      <div class="shots">
-        <img src="images/sikmul1/graphic-guide-1.jpg" alt="SIKMUL 1 Graphic Guide / Poster Guide 1" loading="lazy" onerror="this.remove()">
-      </div>
-    </div>
-  </section>
-
   <section id="hotel-shilla" class="page" data-nav="work">
     <a class="back-link" href="#work">← Work</a>
-    <h1 class="p-title">Hotel Shilla</h1>
+    <h1 class="p-title">호텔신라</h1>
     <div class="p-period">2018.08 – 2019.04</div>
     <div class="p-tags"><span>Package Design</span><span>Space Design</span><span>Graphic Design</span></div>
     <p class="p-overview">호텔신라는 대한민국 최고의 럭셔리 호텔 브랜드입니다. 호텔 내부에서 진행되는 마케팅 프로모션 디자인과 공간 디자인, 패키지 디자인 등을 진행했습니다. 가이드 제작을 통한 지속적인 브랜드 고도화 작업으로 브랜드 정체성 강화에 기여하였습니다.</p>
@@ -383,15 +298,74 @@
     </div>
   </section>
 
-  <section id="etc" class="page" data-nav="work">
+  <section id="freelance" class="page" data-nav="work">
     <a class="back-link" href="#work">← Work</a>
-    <h1 class="p-title">ETC</h1>
-    <div class="p-period">2019 – 2021</div>
-    <div class="p-tags"><span>Character Design</span><span>Editorial Design</span></div>
-    <p class="p-overview">캐릭터 디자인과 편집디자인 작업입니다. 건강식품 전문 브랜드 Dano의 MBTI 캐릭터를 디자인하였고, Around Magazine의 외부 편집 디자인을 진행하였습니다.</p>
-    <div class="p-contrib">Contribution 100%</div>
+    <h1 class="p-title">프리랜서</h1>
+    <div class="p-period">2017 – 2022</div>
+    <div class="p-tags"><span>Welluga</span><span>SIKMUL 1</span><span>ETC</span></div>
+    <div class="proj-block">
+      <h2 class="proj-title">Welluga</h2>
+      <div class="p-period">2022.02 – 2022.04</div>
+      <div class="p-tags"><span>Brand Experience</span><span>Illustration</span></div>
+      <p class="p-overview">웰루가는 폐쇄적인 운동 콘텐츠 시장에서 정보 비대칭을 개선하고, 소비자와 공급자 경계 없이 커뮤니티가 이루어지는 통합 웰니스 플랫폼입니다. 앱 서비스 런칭을 위한 로고, 브랜드 가이드, 일러스트를 제작하였습니다.</p>
+      <div class="p-contrib">Contribution 100%</div>
     <div class="sec">
-      <h2>Dano MBTI Character</h2>
+      <h3>Brand Identity</h3>
+      <p>웰루가는 ‘벨루가’의 사랑스럽고 따뜻한 표정, 바다에서 유영하는 자유로움과 역동성을 담은 브랜드입니다. 피트니스 시장의 정보 비대칭을 개선하고 사용자와 공급자 간의 지속적인 연결을 통해 맞춤화된 서비스를 제공합니다.</p>
+      <div class="shots">
+        <img src="images/welluga/brand-identity-1.jpg" alt="Welluga Brand Identity 1" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="sec">
+      <h3>Logo</h3>
+      <div class="sec-meta">Lettering, Word Mark</div>
+      <div class="shots">
+        <img src="images/welluga/logo-1.jpg" alt="Welluga Logo 1" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="sec">
+      <h3>App Icon / Business Card / T-shirts</h3>
+      <div class="shots">
+        <img src="images/welluga/application-1.jpg" alt="Welluga App Icon / Business Card / T-shirts 1" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="sec">
+      <h3>Illustration</h3>
+      <div class="shots">
+        <img src="images/welluga/illustration-1.jpg" alt="Welluga Illustration 1" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    </div>
+    <div class="proj-block">
+      <h2 class="proj-title">SIKMUL 1</h2>
+      <div class="p-period">2020.03 – 2020.04</div>
+      <div class="p-tags"><span>Brand Experience</span><span>Illustration</span></div>
+      <p class="p-overview">식물원(SIKMUL1)은 가드닝 상품을 비롯한 라이프스타일 상품을 판매하는 편집매장입니다. 내부 운영에 필요한 브랜드 애플리케이션, 행사용 그래픽, SNS 콘텐츠 가이드 등을 제작했습니다. 식물원의 기존 아이덴티티를 디자인에 녹여 하나의 일관된 방향성으로 나아가고, 고객들에게는 식물원만의 브랜드 이미지를 강화할 수 있도록 했습니다.</p>
+      <div class="p-contrib">Contribution 100%</div>
+    <div class="sec">
+      <h3>Brand Application / VIP Card</h3>
+      <p>매장 내 배치되는 브랜드 어플리케이션과 1주년 기념 VIP 카드를 디자인하였습니다. 가드닝을 상징하는 다섯 가지 요소를 그래픽으로 표현하여 브랜드의 아이덴티티를 시각적으로 강조하였으며, 이를 통해 고객들에게 독특하고 기억에 남는 경험을 제공하고자 했습니다.</p>
+      <div class="shots">
+        <img src="images/sikmul1/brand-application-1.jpg" alt="SIKMUL 1 Brand Application / VIP Card 1" loading="lazy" onerror="this.remove()">
+        <img src="images/sikmul1/brand-application-2.jpg" alt="SIKMUL 1 Brand Application / VIP Card 2" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    <div class="sec">
+      <h3>Graphic Guide / Poster Guide</h3>
+      <p>식물원의 정기 포스터와 SNS 콘텐츠를 디자인하였습니다. 운영 가이드를 함께 제작하여 디자인의 효율성을 높이고 일관성을 유지하였으며, 이를 통해 브랜드 이미지를 강화할 수 있도록 했습니다.</p>
+      <div class="shots">
+        <img src="images/sikmul1/graphic-guide-1.jpg" alt="SIKMUL 1 Graphic Guide / Poster Guide 1" loading="lazy" onerror="this.remove()">
+      </div>
+    </div>
+    </div>
+    <div class="proj-block">
+      <h2 class="proj-title">ETC</h2>
+      <div class="p-period">2019 – 2021</div>
+      <div class="p-tags"><span>Character Design</span><span>Editorial Design</span></div>
+      <p class="p-overview">캐릭터 디자인과 편집디자인 작업입니다. 건강식품 전문 브랜드 Dano의 MBTI 캐릭터를 디자인하였고, Around Magazine의 외부 편집 디자인을 진행하였습니다.</p>
+      <div class="p-contrib">Contribution 100%</div>
+    <div class="sec">
+      <h3>Dano MBTI Character</h3>
       <p>건강식품 전문 쇼핑몰 다노와 함께 진행한 다이어트 유형 테스트에 들어가는 캐릭터 디자인입니다. 각 캐릭터는 과일과 채소를 모티브로 하여, MBTI별 특징을 동세와 표정으로 표현하였습니다.</p>
       <div class="shots">
         <img src="images/etc/dano-1.jpg" alt="ETC Dano MBTI Character 1" loading="lazy" onerror="this.remove()">
@@ -399,7 +373,7 @@
       </div>
     </div>
     <div class="sec">
-      <h2>Suwon Culture &amp; Art</h2>
+      <h3>Suwon Culture &amp; Art</h3>
       <div class="sec-meta">Magazine</div>
       <p>수원문화재단에서 발행하는 「인인화락」 매거진입니다. 계절별 콘셉트에 맞추어 표지와 내지의 편집 디자인을 진행했습니다. 시에서 발간하는 정보성 매거진인 만큼 명확하고 직관적으로 편집을 구성하여 필요한 정보를 쉽게 찾을 수 있도록 했습니다.</p>
       <div class="shots">
@@ -407,12 +381,13 @@
       </div>
     </div>
     <div class="sec">
-      <h2>Suwon Culture &amp; Art</h2>
+      <h3>Suwon Culture &amp; Art</h3>
       <div class="sec-meta">Magazine</div>
       <p>수원문화재단에서 발행하는 「예술과 만남」 매거진입니다. 크리스마스 콘셉트에 맞추어 표지와 내지의 편집 디자인을 진행했습니다. 시에서 발간하는 정보성 매거진인 만큼 명확하고 직관적으로 편집을 구성하여 필요한 정보를 쉽게 찾을 수 있도록 했습니다.</p>
       <div class="shots">
         <img src="images/etc/suwon-2-1.jpg" alt="ETC Suwon Culture &amp; Art 1" loading="lazy" onerror="this.remove()">
       </div>
+    </div>
     </div>
   </section>
 
@@ -440,15 +415,6 @@
     });
     window.scrollTo(0, 0);
   }
-  document.querySelectorAll(".tab").forEach(function (b) {
-    b.addEventListener("click", function () {
-      var f = b.dataset.filter;
-      document.querySelectorAll(".tab").forEach(function (x) { x.classList.toggle("active", x === b); });
-      document.querySelectorAll(".card").forEach(function (c) {
-        c.style.display = (f === "all" || c.dataset.company === f) ? "" : "none";
-      });
-    });
-  });
   window.addEventListener("hashchange", show);
   show();
 </script>
